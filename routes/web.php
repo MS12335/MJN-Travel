@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DestinationsController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Models\Destination;
 
 /*
@@ -35,19 +37,14 @@ Route::get('/success-checkout', function () {
 
 Route::get('/destinations', [DestinationsController::class, "index"]);
 
-Route::get('/destinations/{destination:slug}', [DestinationsController::class, "show"]);
+Route::get('/destinations/{destination:slug}', [DestinationsController::class, "show"])->middleware("auth");
 
-Route::get('/detail-product', function () {
-    return view('detail_product');
-});
+Route::get('/register', [RegisterController::class, "index"])->middleware("guest");
+Route::post('/register', [RegisterController::class, "store"]);
 
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/register', function () {
-    return view('register');
-});
+Route::get('/login', [LoginController::class, "index"])->middleware("guest")->name("login");
+Route::post('/login', [LoginController::class, "authenticate"]);
+Route::post('/logout', [LoginController::class, "logout"]);
 
 Route::get('/about', function () {
     return view('about', [

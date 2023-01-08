@@ -9,11 +9,32 @@
                 <li class="nav-item"><a class="nav-link {{ Request::is("destinations") ? "activated" : "" }}" href="/destinations" >Explore</a></li>
                 <li class="nav-item"><a class="nav-link {{ Request::is("categories") ? "activated" : "" }}" href="/categories">Category</a></li>
                 <li class="nav-item"><a class="nav-link {{ Request::is("about") ? "activated" : "" }}" href="/about">About</a></li>
-                <li>
-                    <div class="btn-primary container">
-                        <a href="/login" class="nav-link text-white">Sign In</a>
-                    </div>
-                </li>
+                @auth
+                    <li class="nav-item">
+                        <div class="container">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ auth()->user()->name }}
+                                <img src="https://ui-avatars.com/api/?name={{ auth()->user()->name }}" class="user-photo" alt="" style="border-radius: 50%; width:10%;">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/dashboard">My Dashboard</a>
+                                </li>
+                                <form action="/logout" method="post">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">Log Out</button>
+                                </form>
+                            </ul>
+                        </div>
+                    </li>
+                    {{-- else disini kalau belum login --}}
+                    @else 
+                    <li>
+                        <div class="btn-primary container">
+                            <a href="/login" class="nav-link text-white">Sign In</a>
+                        </div>
+                    </li>
+                @endauth
             </ul>
         </header>
     </div>
