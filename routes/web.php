@@ -50,5 +50,7 @@ Route::get('/register', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        "title" => "About"
+    ]);
 });
