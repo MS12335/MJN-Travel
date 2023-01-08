@@ -52,13 +52,15 @@
                                     </label>
                                 </div>
                                 <div class="d-flex justify-content-center btn-register">
-                                    <button type="button" class="btn text-white" style="width: 100%;">Register</button>
+                                    <button type="button" class="btn text-white">Register</button>
                                 </div>
-                                <p class="text-center text-muted mt-2 mb-0">Already have an account? 
-                                    <a href="#" class="">
-                                        Login Here
-                                    </a>
-                                </p>
+                                <div class="container">
+                                    <p class="text-center text-muted mt-2 mb-0">Already have an account? 
+                                        <a href="/login" class="">
+                                            Login Here
+                                        </a>
+                                    </p>
+                                </div>
                             </form>
                         </div>
                     </div>

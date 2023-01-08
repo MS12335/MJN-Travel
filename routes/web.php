@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DestinationsController;
+use App\Models\Destination;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        "title" => "Home",
+        "destinations" => Destination::all()->take(3)
+    ]);
 });
 
-Route::get('/categories', function () {
-    return view('categories');
-});
+Route::get('/categories', [CategoriesController::class, "index"]);
 
 Route::get('/checkout', function () {
     return view('checkout');
@@ -29,9 +33,9 @@ Route::get('/success-checkout', function () {
     return view('success_checkout');
 });
 
-Route::get('/destinations', function () {
-    return view('destinations');
-});
+Route::get('/destinations', [DestinationsController::class, "index"]);
+
+Route::get('/destinations/{destination:slug}', [DestinationsController::class, "show"]);
 
 Route::get('/detail-product', function () {
     return view('detail_product');

@@ -17,8 +17,8 @@ class DestinationFactory extends Factory
     public function definition()
     {
         return [
-            "category_id" => mt_rand(1,8),
-            "title" => $this->faker->sentence(mt_rand(2,8)),
+            "category_id" => mt_rand(1,5),
+            "title" => $this->faker->sentence(mt_rand(1,2)),
             //ini untuk regenerate slug
             "slug" => $this->faker->slug(),
             //ini untuk regenerate paragraf tapi disini ditambahkan mt_rand yang minimum kata 10 dan maximum kata 25

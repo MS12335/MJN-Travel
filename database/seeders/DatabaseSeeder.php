@@ -19,8 +19,33 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::factory(5)->create();
-        Category::factory(8)->create();
-        Destination::factory(20)->create();
+        Category::create(
+            [
+                "name" => "Bali",
+                "slug" => "bali"
+            ]);
+        Category::create(
+            [
+                "name" => "Italy",
+                "slug" => "italy"
+            ]);
+        Category::create(
+            [
+                "name" => "Rome",
+                "slug" => "rome"
+            ]);
+        Category::create(
+            [
+                "name" => "Mexico",
+                "slug" => "mexico"
+            ]);
+        Category::create(
+            [
+                "name" => "Africa",
+                "slug" => "africa"
+            ]);
+        //Category::factory(8)->create();
+        Destination::factory(100)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

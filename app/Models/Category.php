@@ -10,4 +10,8 @@ class Category extends Model
     use HasFactory;
     //jajdi variabel id tidak dapat diisi
     protected $guarded = ["id"];
+    public function category()
+    {
+        return $this->hasMany(Destination::class);
+    }
 }

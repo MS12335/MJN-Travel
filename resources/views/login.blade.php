@@ -40,7 +40,7 @@
                                         </div>
                                         <div class="container small-login-and-register my-2" style="font-size: 15px;">
                                             Don't have an acoount? 
-                                            <a href="#">Register Here!</a>
+                                            <a href="/register">Register Here!</a>
                                         </div>
                                     </form>
                                 </div>

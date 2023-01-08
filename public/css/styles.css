@@ -207,11 +207,15 @@ p {
     border-radius: 10px;
 }
 
+.card-img-categories {
+    border-radius: 20px;
+}
+
 .card-img-overlay {
     display : flex;
     align-items : center;
     color: white;
-    border-radius: 20px;
+    border-radius: 20px ;
     background-color: rgba(0,0,0,0.2);
 }
 
@@ -246,6 +250,7 @@ p {
 .img-detail-product {
     width: 75%;
     text-align: center;
+    border-radius: 20px;
 }
 
 .description-detail-product {
@@ -344,4 +349,22 @@ p {
 .title-founders {
     margin-bottom: 80px;
     margin-top: 100px;
+}
+
+.pagination {
+    justify-content: right;
+}
+
+.no-destination {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 26%;
+}
+
+.link-destination {
+    text-decoration: none;
+    text-align: left;
+    font-size: 0.8rem;
+    padding-left: 0;
+    color: #797979;
 }

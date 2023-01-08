@@ -46,78 +46,36 @@
                     <br> world are ready for you
                 </p>
                 <div class="destination">
-                    <div class="col-lg-3 col-md-2 col-sm-1 card" style="width: 18rem;">
-                        <img src="{{ asset('img/uluwatu.png') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" >Uluwatu Temple</h5>
-                            <p class="card-text">
-                                <div class="container card-text-first">
-                                    <img src="{{ asset('img/stars.png') }}" alt="" class="card-img-stars">
-                                    4.9K Reviews
-                                    <br>
+                    @foreach ($destinations as $destination)
+                        <div class="row">
+                            <div class="col-lg-4 col-md-2 col-sm-1 card" style="width: 18rem;">
+                                <img src="https://source.unsplash.com/288x197?{{ $destination->category->name }}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title" >{{ $destination->title }}</h5>
+                                    <p class="card-text">
+                                        <div class="container card-text-first">
+                                            <img src="{{ asset('img/stars.png') }}" alt="" class="card-img-stars">
+                                            4.9K Reviews
+                                            <br>
+                                        </div>
+                                        <div class="container card-text-first">
+                                            <img src="{{ asset('img/Location.png') }}" alt="" class="card-img-location">
+                                            <a href="/destinations?category={{ $destination->category->slug }}"class="link-destination">
+                                                {{ $destination->category->name }}
+                                            </a>
+                                            <br>
+                                            <span class="price">
+                                                ${{ $destination->price }}/Person
+                                            </span>
+                                        </div>
+                                    </p>
+                                    <div class="container btn-book-now">
+                                        <a href="/destinations/{{ $destination->slug }}" class="text-white">Book Now</a>
+                                    </div>
                                 </div>
-                                <div class="container card-text-first">
-                                    <img src="{{ asset('img/Location.png') }}" alt="" class="card-img-location">
-                                    Bali
-                                    <br>
-                                    <span class="price">
-                                        $59.99/Person
-                                    </span>
-                                </div>
-                            </p>
-                            <div class="container btn-book-now">
-                                <a href="#" class="text-white">Book Now</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-2 col-sm-1 card" style="width: 18rem;">
-                        <img src="{{ asset('img/Eiffel.png') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" >Eiffel Tower</h5>
-                            <p class="card-text">
-                                <div class="container card-text-first">
-                                    <img src="{{ asset('img/stars.png') }}" alt="" class="card-img-stars">
-                                    4.8K Reviews
-                                    <br>
-                                </div>
-                                <div class="container card-text-first">
-                                    <img src="{{ asset('img/Location.png') }}" alt="" class="card-img-location">
-                                    France
-                                    <br>
-                                    <span class="price">
-                                        $69.99/Person
-                                    </span>
-                                </div>
-                            </p>
-                            <div class="container btn-book-now">
-                                <a href="#" class="text-white">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-2 col-sm-1 card" style="width: 18rem;">
-                        <img src="{{ asset('img/Borobudur.png') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title" >Borobudur Temple</h5>
-                            <p class="card-text">
-                                <div class="container card-text-first">
-                                    <img src="{{ asset('img/stars.png') }}" alt="" class="card-img-stars">
-                                    4.9K Reviews
-                                    <br>
-                                </div>
-                                <div class="container card-text-first">
-                                    <img src="{{ asset('img/Location.png') }}" alt="" class="card-img-location">
-                                    Yogyakarta
-                                    <br>
-                                    <span class="price">
-                                        $99.99/Person
-                                    </span>
-                                </div>
-                            </p>
-                            <div class="container btn-book-now">
-                                <a href="#" class="text-white">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
