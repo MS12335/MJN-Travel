@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string("slug")->unique();
             $table->string("image")->nullable();
             $table->text("body");
-            $table->string("location");
             $table->integer("price");
             $table->timestamps();
             $table->softDeletes();

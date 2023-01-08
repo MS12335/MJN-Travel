@@ -369,3 +369,9 @@ p {
     padding-left: 0;
     color: #797979;
 }
+
+.img-detail-product-dashboard {
+    width: 80%;
+    text-align: center;
+    border-radius: 20px;
+}

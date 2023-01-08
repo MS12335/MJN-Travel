@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DashboardDestinationsController;
 use App\Http\Controllers\DestinationsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -28,7 +29,9 @@ Route::get('/', function () {
 Route::get('/categories', [CategoriesController::class, "index"]);
 
 Route::get('/checkout', function () {
-    return view('checkout');
+    return view('checkout', [
+        "title" => "Checkout"
+    ]);
 });
 
 Route::get('/success-checkout', function () {
@@ -52,8 +55,9 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/admin/dashboard', function () {
-    return view('dashboard.index', [
-        "title" => "About"
-    ]);
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
 });
+
+Route::resource('/dashboard/destinations', DashboardDestinationsController::class);
+

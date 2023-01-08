@@ -25,7 +25,6 @@ class DestinationFactory extends Factory
             "body" => "<p>".implode("<p></p>",$this->faker->paragraphs(mt_rand(10,25)))."</p>",
             //ini untuk meregenerate user id menggunakan mt rand yang minimum 1 dan maximum 3 karena di database kita hanya gunakan 3 user
             //ini untuk meregenerate category id menggunakan mt rand yang minimum 1 dan maximum 2 karena di database kita hanya gunakan 2 category yaotu web design dan personal
-            "location" => $this->faker->word(),
             "price" => $this->faker->numberBetween(1,100)
         ];
     }

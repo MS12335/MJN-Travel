@@ -48,7 +48,12 @@
                 <div class="destination">
                     @foreach ($destinations as $destination)
                         <div class="col-lg-4 col-md-2 col-sm-1 card" style="width: 18rem;">
-                            <img src="https://source.unsplash.com/288x197?{{ $destination->category->name }}" class="card-img-top" alt="...">
+                            {{-- ini kondisi apabila ada image dari database kalau misalkan tidak ada maka akan diambil dari unsplash dan ini untuk tampilan destination cardnya --}}
+                            @if ($destination->image)
+                                <img src="{{ asset("storage/".$destination->image) }}" alt="..." class="card-img-top">
+                            @else
+                                <img src="https://source.unsplash.com/288x197?{{ $destination->category->name }}" class="card-img-top" alt="...">
+                            @endif
                             <div class="card-body">
                                 <h5 class="card-title" >{{ $destination->title }}</h5>
                                 <p class="card-text">
