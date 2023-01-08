@@ -51,3 +51,9 @@ Route::get('/about', function () {
         "title" => "About"
     ]);
 });
+
+Route::get('/admin/dashboard', function () {
+    return view('dashboard.index', [
+        "title" => "About"
+    ]);
+});
