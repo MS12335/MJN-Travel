@@ -27,7 +27,7 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <div class="form-outline flex-fill mb-0">
                                                 <div class="form-floating mb-3">
-                                                    <input type="email" class="form-control @error("email") is-invalid @enderror" id="email" name="email" placeholder="name@example.com" required>
+                                                    <input type="email" class="form-control @error("email") is-invalid @enderror" id="email" name="email" placeholder="name@example.com" autofocus required>
                                                     <label for="email">Email address</label>
                                                     @error('email')
                                                         <div class="invalid-feedback">
@@ -59,7 +59,7 @@
                                             </label>
                                         </div>
                                         <div class="d-flex justify-content-start btn-sign-in">
-                                            <button type="submit" class="btn text-white m-auto">Sign In</button>
+                                            <button type="submit" class="btn text-white m-auto" style="border:none;">Sign In</button>
                                         </div>
                                         <div class="container small-login-and-register my-2" style="font-size: 15px;">
                                             Don't have an acoount? 

@@ -15,7 +15,7 @@
                                 @csrf
                                 <div class="form-outline mb-4">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name " name="name" placeholder="name" autocomplete="off" value="{{ old("name") }}" required>
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name " name="name" placeholder="name" autocomplete="off" value="{{ old("name") }}" autofocus required>
                                         <label for="name">Full Name</label>
                                         @error('name')
                                             <div class="invalid-feedback">
@@ -67,7 +67,7 @@
                                     </label>
                                 </div>
                                 <div class="d-flex justify-content-center btn-register">
-                                    <button type="submit" class="btn text-white">Register</button>
+                                    <button type="submit" class="btn text-white" style="border:none;">Register</button>
                                 </div>
                                 <div class="container">
                                     <p class="text-center text-muted mt-2 mb-0">Already have an account? 
