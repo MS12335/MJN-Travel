@@ -23,7 +23,11 @@
                 @foreach ($destinations as $destination)
                     <div class="col-md-4 mb-3">
                         <div class="card">
-                            <img src="https://source.unsplash.com/414x275?{{ $destination->category->name }}" class="card-img-top" alt="">
+                            @if ($destination->image)
+                                <img src="{{ asset("storage/".$destination->image) }}" alt="..." class="card-img-top">
+                            @else
+                                <img src="https://source.unsplash.com/414x275?{{ $destination->category->name }}" class="card-img-top" alt="">
+                            @endif
                             <div class="card-body">
                                 <h5 class="card-title">{{ $destination->title }}</h5>
                                 <p class="card-text">

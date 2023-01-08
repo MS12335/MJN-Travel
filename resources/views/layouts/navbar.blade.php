@@ -17,8 +17,14 @@
                                 <img src="https://ui-avatars.com/api/?name={{ auth()->user()->name }}" class="user-photo" alt="" style="border-radius: 50%; width:10%;">
                             </a>
                             <ul class="dropdown-menu">
+                                @can("admin")
+                                    {{-- kalau * jadi apapun tulisan atau route setalah kata dashboard/categories maka tombol akan tetap active --}}
+                                    <li>
+                                        <a class="dropdown-item" href="/dashboard/destinations">My Dashboard</a>
+                                    </li>
+                                @endcan
                                 <li>
-                                    <a class="dropdown-item" href="/dashboard">My Dashboard</a>
+                                    <a class="dropdown-item" href="#">My Orders</a>
                                 </li>
                                 <form action="/logout" method="post">
                                     @csrf

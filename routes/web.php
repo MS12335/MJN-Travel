@@ -57,7 +57,7 @@ Route::get('/about', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
-});
+})->middleware("admin");
 
-Route::resource('/dashboard/destinations', DashboardDestinationsController::class);
+Route::resource('/dashboard/destinations', DashboardDestinationsController::class)->middleware("admin");
 
