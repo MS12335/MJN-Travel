@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardDestinationsController;
+use App\Http\Controllers\DashboardCategoriesController;
+use App\Http\Controllers\DashboardUsersController;
 use App\Http\Controllers\DestinationsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -60,4 +62,6 @@ Route::get('/dashboard', function () {
 })->middleware("admin");
 
 Route::resource('/dashboard/destinations', DashboardDestinationsController::class)->middleware("admin");
+Route::resource('/dashboard/categories', DashboardCategoriesController::class)->except("show")->middleware("admin");
+Route::resource('/dashboard/users', DashboardUsersController::class)->except("show")->middleware("admin");
 
