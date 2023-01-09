@@ -43,8 +43,8 @@ class DashboardDestinationsController extends Controller
     {
         //kemudian ini untuk cek validasi data
         $validatedData = $request->validate([
-            "title" => "required|max:255",
-            "slug" => "required|unique:destinations",
+            "title" => "required|string|max:255",
+            "slug" => "required|string|unique:destinations",
             "category_id" => "required",
             //ingat tulis file dulu baru max kalau enggak nanti max akan dikiranya sebagai karaketer, kalau tulisnya setelah file maka akan dianggap sebagai 1 kilobyte
             // "image" => "image|file|max:1024",
@@ -106,7 +106,7 @@ class DashboardDestinationsController extends Controller
     {
         //berikut validasi data yang kita update dan disini meskipun kita tidak ganti slug maka akan muncul error karena sudah ada slug yang sama padahal kita tidak ganti slugnya, sehingga disini kita dapat hilangkan slug di variabel rulesnya
         $rules = [
-            "title" => "required|max:255",
+            "title" => "required|string|max:255",
             "category_id" => "required",
             // "image" => "image|file|max:1024",
             "body" => "required",

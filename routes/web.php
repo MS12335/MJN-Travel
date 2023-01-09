@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardDestinationsController;
 use App\Http\Controllers\DashboardCategoriesController;
 use App\Http\Controllers\DashboardUsersController;
@@ -37,7 +38,9 @@ Route::get('/checkout', function () {
 });
 
 Route::get('/success-checkout', function () {
-    return view('success_checkout');
+    return view('success_checkout', [
+        "title" => "success-checkout"
+    ]);
 });
 
 Route::get('/destinations', [DestinationsController::class, "index"]);
@@ -50,6 +53,9 @@ Route::post('/register', [RegisterController::class, "store"]);
 Route::get('/login', [LoginController::class, "index"])->middleware("guest")->name("login");
 Route::post('/login', [LoginController::class, "authenticate"]);
 Route::post('/logout', [LoginController::class, "logout"]);
+
+Route::get('/checkout', [CheckoutController::class, "index"])->middleware("auth");
+Route::post('/checkout', [CheckoutController::class, "store"]);
 
 Route::get('/about', function () {
     return view('about', [

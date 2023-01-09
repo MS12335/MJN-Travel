@@ -9,6 +9,7 @@
   <!-- Custom styles for this template -->
   <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+  <link rel="icon" href="{{ asset('img/Logo-small.png') }}">
   <script src="https://unpkg.com/feather-icons"></script>
   <title>Dashboard</title>
 </head>

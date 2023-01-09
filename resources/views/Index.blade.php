@@ -41,7 +41,7 @@
     <section class="destinations">
         <div class="px-4 py-4 my-4 text-center">
             <h1 class="display-5 fw-medium">Top Destinations</h1>
-            <div class="col-lg-8 mx-auto">
+            <div class="container mx-auto">
                 <p class="lead mb-4">The best destinations in the whole 
                     <br> world are ready for you
                 </p>

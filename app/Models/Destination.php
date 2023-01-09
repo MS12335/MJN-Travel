@@ -26,6 +26,10 @@ class Destination extends Model
             });
         });
     }
+    public function checkout()
+    {
+        return $this->hasMany(Checkout::class);
+    }
     public function category()
     {
         return $this->belongsTo(Category::class);

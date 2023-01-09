@@ -39,10 +39,10 @@ class DashboardUsersController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            "name" => "required|max:255|unique:users",
-            "username" => "required|min:5|max:50|unique:users",
+            "name" => "required|string|max:255|unique:users",
+            "username" => "required|string|min:5|max:50|unique:users",
             "email" => "required|email|unique:users",
-            "password" => "required|min:5",
+            "password" => "required|string|min:5",
             "password_confirmation" => "required|same:password",
             "is_admin" => "required"
         ]);
@@ -90,7 +90,7 @@ class DashboardUsersController extends Controller
     public function update(Request $request, User $user)
     {
         $rules = [
-            "name" => "required|max:255",
+            "name" => "required|string|max:255",
             "is_admin" => "required"
         ];
 

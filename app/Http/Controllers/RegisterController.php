@@ -25,13 +25,13 @@ class RegisterController extends Controller
         //berikut cara untuk melakukan validasi data ketika registrasi
         $validateData = $request->validate([
             // jadi disini kita cek bahwa isi variabel name maximum ada 255 karakter
-            'name' => 'required|max:255',
+            'name' => 'required|string|max:255',
             //lalu kalau di username di cek bahwa minimum karakter 3 dan maximum karakter 25 dan kemudian ini harus unique dan dicek di tabel user apakah ada atau tidak usernamenya kalau ada maka akan error
-            'username' => 'required|min:3|max:25|unique:users',
+            'username' => 'required|string|min:3|max:25|unique:users',
             //lalu disini untuk email tipe datanya email dan disini email harus unique sehingga apabila yang ktia ketikkan emailnya ada di database maka akan error, dns disini untuk cek apakah domainnya udh benar yaitu.com
             'email' => 'required|email|unique:users',
             //lalu ada password disini dan ini minimum karakter password 5 dan maximum 25
-            'password' => 'required|min:5|max:255',
+            'password' => 'required|string|min:5|max:255',
         ]);
 
         //ini untuk enkripsi password

@@ -17,7 +17,7 @@
                     ${{ $destinations->price }}/Person
                 </div>
                 <div class="btn-book-now-detail-product-page">
-                    <a href="#" class="text-white">Buy Ticket</a>
+                    <a href="/checkout?destination={{ $destinations->slug }}" class="text-white">Buy Ticket</a>
                 </div>
             </div>
         </div>

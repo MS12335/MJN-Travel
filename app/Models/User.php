@@ -38,6 +38,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function checkout()
+    {
+        return $this->hasMany(Checkout::class);
+    }
+
     public function getRouteKeyName(): string
     {
         return 'username';

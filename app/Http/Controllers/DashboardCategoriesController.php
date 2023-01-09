@@ -39,8 +39,8 @@ class DashboardCategoriesController extends Controller
     {
         //kemudian ini untuk cek validasi data
         $validatedData = $request->validate([
-            "name" => "required|max:255|unique:categories",
-            "slug" => "required|unique:categories"
+            "name" => "required|string|max:255|unique:categories",
+            "slug" => "required|string|unique:categories"
         ]);
 
         //kemudian kita dapat masukkan datanya ke tabel
