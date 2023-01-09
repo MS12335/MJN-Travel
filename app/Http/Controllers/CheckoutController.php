@@ -7,6 +7,7 @@ use App\Models\Checkout;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class CheckoutController extends Controller
 {
@@ -29,10 +30,12 @@ class CheckoutController extends Controller
             'date_of_booking'=>'required|after:today',
             'quantity' => 'required|numeric|min:1',
             'card_number' => 'required|string|min:19',
-            'expired' => 'required|date|date_format:Y-m',
+            'expired' => 'required|date|date_format:Y-m|after:today',
             'cvc' => 'required|string|max:3'
         ]);
+        $validateData["card_number"] = Hash::make($request->card_number);
         $validateData["expired"] = Carbon::createFromFormat('Y-m', $request->expired);
+        $validateData["cvc"] = Hash::make($request->cvc);
         $validateData["destination_id"] = Destination::where("slug", request("destination"))->sum('id'); 
         $validateData["user_id"] = Auth::id(); 
         $validateData["price_per_person"] = Destination::where("slug", request("destination"))->sum("price");
