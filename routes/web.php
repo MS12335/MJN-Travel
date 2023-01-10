@@ -6,7 +6,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardDestinationsController;
 use App\Http\Controllers\DashboardCategoriesController;
 use App\Http\Controllers\DashboardUsersController;
-use App\Http\Controllers\DashboardCheckoutController;
+use App\Http\Controllers\DashboardCheckoutsController;
 use App\Http\Controllers\DestinationsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -71,5 +71,5 @@ Route::get('/dashboard', function () {
 Route::resource('/dashboard/destinations', DashboardDestinationsController::class)->middleware("admin");
 Route::resource('/dashboard/categories', DashboardCategoriesController::class)->except("show")->middleware("admin");
 Route::resource('/dashboard/users', DashboardUsersController::class)->except("show")->middleware("admin");
-Route::resource('/dashboard/transactions', DashboardCheckoutController::class)->except("show", "store", "create", "edit", "update")->middleware("admin");
+Route::resource('/dashboard/checkouts', DashboardCheckoutsController::class)->except("show","store", "create", "edit", "update")->middleware("admin");
 

@@ -41,7 +41,7 @@
                         <td>{{ $checkout->cvc}}</td>
                         <td>
                             {{-- jadi disini kita buat form dan actionnya akan pass data slugnya agar nanti bisa di ambil datanya di dashboard controller dan ini kita rewrite methodnya dyang dari category jadi delete, nah disini ingat form hanya bisa get dan category sehingga kita harus overwrite method didalam formnya dan disini langsung akan diarahkan ke function destroy di dashboard controller --}}
-                            <form action="/dashboard/transactions/{{ $checkout->id }}" method="post" class="d-inline">
+                            <form action="/dashboard/checkouts/{{ $checkout->id }}" method="post" class="d-inline">
                                 @method("delete")
                                 @csrf
                                 <button type="submit" class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">

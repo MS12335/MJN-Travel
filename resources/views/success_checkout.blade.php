@@ -11,7 +11,7 @@
                         Thank You For Your Order
                     </h2>
                     <a href="#" class="btn btn-my-dashboard mt-3 p-10">
-                        My Dashboard
+                        My Orders
                     </a>
                 </div>
             </div>

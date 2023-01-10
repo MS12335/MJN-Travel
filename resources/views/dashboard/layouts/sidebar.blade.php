@@ -17,7 +17,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is("dashboard/transactions*") ? "active" : "" }}" href="/dashboard/transactions">
+                <a class="nav-link {{ Request::is("dashboard/checkouts*") ? "active" : "" }}" href="/dashboard/checkouts">
                     Transactions
                 </a>
             </li>
