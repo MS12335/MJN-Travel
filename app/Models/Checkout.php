@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Checkout extends Model
 {
     use HasFactory;
-    protected $dateFormat = 'Y-m';
     protected $guarded = ["id"];
     //relasi one to one ke user
     public function user()

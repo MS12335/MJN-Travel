@@ -10,7 +10,7 @@
                     <h2 class="primary-header ">
                         Thank You For Your Order
                     </h2>
-                    <a href="#" class="btn btn-my-dashboard mt-3 p-10">
+                    <a href="/orders" class="btn btn-my-dashboard mt-3 p-10">
                         My Orders
                     </a>
                 </div>

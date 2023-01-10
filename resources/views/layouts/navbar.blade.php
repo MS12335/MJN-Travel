@@ -24,7 +24,7 @@
                                     </li>
                                 @endcan
                                 <li>
-                                    <a class="dropdown-item" href="#">My Orders</a>
+                                    <a class="dropdown-item" href="/orders">My Orders</a>
                                 </li>
                                 <form action="/logout" method="post">
                                     @csrf

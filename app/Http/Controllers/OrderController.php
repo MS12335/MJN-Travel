@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Checkout;
 use Illuminate\Http\Request;
+use Auth;
 
 class OrderController extends Controller
 {
-    $checkouts = Checkout::with('Camp')->whereUserId((Auth::id()))->get(); // ini untuk ambil nama user yang checkout dari id user yang login
-    return view('user.dashboard', [
-        'checkouts' => $checkouts
-        
-    ]);
+    public function index ()
+    {
+        $checkouts = Checkout::with('destination')->whereUserId((Auth::id()))->get();
+        return view('orders', [
+            "title" => "Orders",
+            'checkouts' => $checkouts
+        ]);
+    }
 }
