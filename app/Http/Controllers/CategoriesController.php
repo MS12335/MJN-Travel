@@ -11,7 +11,7 @@ class CategoriesController extends Controller
     {
         return view("categories",[
             "title" => "Categories",
-            "categories" => Category::all()
+            "categories" => Category::orderBy("id","ASC")->get()
         ]);
     }
 }

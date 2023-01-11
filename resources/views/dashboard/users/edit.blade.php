@@ -37,12 +37,8 @@
             <div class="mb-3">
                 <label for="is_admin" class="form-label">Is Admin</label>
                 <select class="form-select" name="is_admin">
-                    @if( old("is_admin") == $users->is_admin )
-                        <option value="{{ $users->is_admin }}" selected>{{ $users->is_admin }}</option>
-                    @else
-                        <option value="1">True</option>
-                        <option value="0">False</option>
-                    @endif
+                    <option value="1">True</option>
+                    <option value="0">False</option>
                 </select>
             </div>
         <button type="submit" class="btn btn-primary">Update User</button>

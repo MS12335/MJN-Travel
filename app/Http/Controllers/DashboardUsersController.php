@@ -16,7 +16,7 @@ class DashboardUsersController extends Controller
     public function index()
     {
         return view("dashboard.users.index", [
-            "users" => User::all()
+            "users" => User::orderBy("id", "ASC")->get()
         ]);
     }
 

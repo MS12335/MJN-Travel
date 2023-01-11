@@ -15,7 +15,7 @@ class DashboardCategoriesController extends Controller
     public function index()
     {
         return view("dashboard.categories.index", [
-            "categories" => Category::all()
+            "categories" => Category::orderBy("id", "ASC")->get()
         ]);
     }
 

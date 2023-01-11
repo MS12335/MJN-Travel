@@ -15,7 +15,7 @@ class DashboardCheckoutsController extends Controller
     public function index()
     {
         return view("dashboard.checkout.index",[
-            "checkouts" => Checkout::all()
+            "checkouts" => Checkout::orderBy("id","ASC")->get()
         ]);
     }
 
