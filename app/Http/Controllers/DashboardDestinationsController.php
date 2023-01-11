@@ -108,7 +108,7 @@ class DashboardDestinationsController extends Controller
         $rules = [
             "title" => "required|string|max:255",
             "category_id" => "required",
-            // "image" => "image|file|max:1024",
+            "image" => "image|file|max:1024",
             "body" => "required",
             "price" => "required"
         ];
@@ -116,7 +116,7 @@ class DashboardDestinationsController extends Controller
         //sehingga kita dapat berikan kondisi apabila slug tidak sama seperti sebelumnya, maka kita dapat berikan kondisi unique
         if($request->slug != $destination->slug)
         {
-            $rules["slug"] = "required|unique:destination";
+            $rules["slug"] = "required|unique:destinations";
         }
 
         //kemudian kita baru validasi
