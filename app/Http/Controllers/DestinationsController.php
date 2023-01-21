@@ -18,7 +18,7 @@ class DestinationsController extends Controller
         }
         return view("destinations", [
             "title"=>"All Destinations".$title,
-            "destinations" => Destination::latest()->filter(request(["search", "category"]))->get()->paginate(6)->withQueryString()
+            "destinations" => Destination::latest()->filter(request(["search", "category"]))->get()->paginate(9)->withQueryString()
         ]);
     }
 

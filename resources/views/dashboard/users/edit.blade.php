@@ -37,8 +37,13 @@
             <div class="mb-3">
                 <label for="is_admin" class="form-label">Is Admin</label>
                 <select class="form-select" name="is_admin">
-                    <option value="1">True</option>
-                    <option value="0">False</option>
+                    @if($users->is_admin)
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                    @else
+                        <option value="0">False</option>
+                        <option value="1">True</option>
+                    @endif
                 </select>
             </div>
         <button type="submit" class="btn btn-primary">Update User</button>

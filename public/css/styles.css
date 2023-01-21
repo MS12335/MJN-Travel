@@ -354,6 +354,7 @@ p {
 
 .pagination {
     justify-content: right;
+    background: white;
 }
 
 .no-destination {

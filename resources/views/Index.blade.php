@@ -21,7 +21,7 @@
                             </p>
                             <div class="btn-get-started">
                                 <div class="row">
-                                    <a href="" class="text-white">
+                                    <a href="/destinations" class="text-white">
                                         Get Started
                                     </a>
                                 </div>
