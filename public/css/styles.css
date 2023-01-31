@@ -98,6 +98,7 @@ p {
 }
 
 .card {
+    display: inline-block;
     margin: 20px 50px 50px;
     border: none;
 }
@@ -133,7 +134,7 @@ p {
 }
 
 .destination {
-    display: flex;
+    display: inline-block;
     margin: 0 20px;
 }
 

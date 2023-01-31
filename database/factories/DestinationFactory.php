@@ -17,7 +17,7 @@ class DestinationFactory extends Factory
     public function definition()
     {
         return [
-            "category_id" => mt_rand(1,5),
+            "category_id" => mt_rand(1,4),
             "title" => $this->faker->sentence(mt_rand(1,2)),
             //ini untuk regenerate slug
             "slug" => $this->faker->slug(),

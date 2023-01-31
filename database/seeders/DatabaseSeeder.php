@@ -39,11 +39,6 @@ class DatabaseSeeder extends Seeder
             ]);
         Category::create(
             [
-                "name" => "Rome",
-                "slug" => "rome"
-            ]);
-        Category::create(
-            [
                 "name" => "Mexico",
                 "slug" => "mexico"
             ]);
