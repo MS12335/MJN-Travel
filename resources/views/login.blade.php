@@ -62,7 +62,7 @@
                                             <button type="submit" class="btn text-white m-auto" style="border:none;">Sign In</button>
                                         </div>
                                         <div class="container small-login-and-register my-2" style="font-size: 15px;">
-                                            Don't have an acoount? 
+                                            Don't have an account? 
                                             <a href="/register">Register Here!</a>
                                         </div>
                                     </form>
